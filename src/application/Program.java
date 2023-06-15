@@ -38,10 +38,17 @@ public class Program {
 		}
 		
 		System.out.println();
-		System.out.println("teste 3 = findAll: ");
+		System.out.println("teste 4 = findAll: ");
 		Seller newSeller = new Seller(null, "Gabriel Mira", "gbiel3mira@gmail.com", new Date(), 4000.00, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id: " + newSeller.getId());
+		
+		System.out.println();
+		System.out.println("teste 5 = update: ");
+		seller = sellerDao.findById(1);
+		seller.setName("Giovanna Albino");
+		sellerDao.update(seller);
+		System.out.println("Update completed!");
 	}
 
 }
