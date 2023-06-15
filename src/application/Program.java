@@ -49,6 +49,11 @@ public class Program {
 		seller.setName("Giovanna Albino");
 		sellerDao.update(seller);
 		System.out.println("Update completed!");
+		
+		System.out.println();
+		System.out.println("teste 5 = delete: ");
+		sellerDao.deleteById(5);
+		
 	}
 
 }
