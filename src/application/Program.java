@@ -38,7 +38,7 @@ public class Program {
 		}
 		
 		System.out.println();
-		System.out.println("teste 4 = findAll: ");
+		System.out.println("teste 4 = insert: ");
 		Seller newSeller = new Seller(null, "Gabriel Mira", "gbiel3mira@gmail.com", new Date(), 4000.00, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id: " + newSeller.getId());
@@ -51,7 +51,7 @@ public class Program {
 		System.out.println("Update completed!");
 		
 		System.out.println();
-		System.out.println("teste 5 = delete: ");
+		System.out.println("teste 6 = delete: ");
 		sellerDao.deleteById(5);
 		
 	}
