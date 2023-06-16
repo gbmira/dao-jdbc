@@ -93,8 +93,28 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
 	@Override
 	public Department findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			ps = con.prepareStatement(
+					"SELECT * FROM department WHERE id = ?"
+					);
+			
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				Department dp = new Department(rs.getInt("Id"), rs.getString("Name"));
+				return dp;
+			}
+			return null;
+		} catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		} finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(ps);
+		}
 	}
 
 	@Override
